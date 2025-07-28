@@ -3,16 +3,16 @@
 
 #import "lib.typ": *
 
-#use-preset();
+#show: resume-preset.with(text-size: 10pt);
 
 #let text-size = 10pt
 #let text-leading = (text-size * 1.6 - text-size) * 1
 #let accent = tw.blue-900;
 
 #let fullname = "Набойщиков Артемий"
-#let position = [Frontend Разработчик/Vue]
+#let position = "Frontend Разработчик/Vue"
 #let location = "Москва/Удалённо"
-#let phone = "8 987 106 04 13"
+#let phone = "+7 987 106-04-13"
 #let telegram = "t.me/nartemiy"
 #let email = "mrart111@mail.ru"
 #let github = "github.com/Artemiy111"
@@ -24,23 +24,15 @@
   location: "Москва",
 )
 
-#align(left)[
-  = #text(20pt, weight: "bold")[#fullname]
-  #set text(14pt)
-  ~~#position
-]
-
-#let items = (
-  location,
-  link("tel:" + phone)[#phone],
-  link("mailto:" + email)[#email],
-  link(telegram)[#telegram],
-  link(github)[#github],
+#header(
+  fullname: fullname,
+  position: position,
+  location: location,
+  phone: phone,
+  email: email,
+  telegram: telegram,
+  github: github,
 )
-
-
-#v(5pt);
-#items.join("  ") \
 
 == О себе
 Уверенно владею экосистемой Vue, вношу в неё свой вклад. Быстро осваиваю новые технологии
@@ -108,7 +100,6 @@
 )
 
 - Веб-скрейпинг на Python
-
 
 == Навыки
 

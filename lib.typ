@@ -1,8 +1,9 @@
 #import "@preview/typewind:0.1.0" as tw
+#import "@preview/fontawesome:0.5.0": *;
 
 #let period(start, end) = [#start $dash.en$ #end]
 
-#let use-preset(text-size: 10pt) = {
+#let resume-preset(body, accent: tw.blue-900, text-size: 10pt) = {
   set list(marker: [--])
   set par(justify: true, linebreaks: "optimized", leading: 0.8em)
 
@@ -38,6 +39,8 @@
     #pad(top: 0pt, bottom: -10pt, [#smallcaps(it.body)])
     #line(length: 100%, stroke: 0.2pt)
   ]
+
+  body
 }
 
 #let two-by-two(
@@ -66,14 +69,14 @@
   degree: "",
   dates: "",
   location: "",
-) = [
-  #two-by-two(
+) = {
+  two-by-two(
     top-left: strong(institution), //
     top-right: dates,
     bottom-left: emph(degree),
     bottom-right: emph(location),
   )
-]
+}
 
 #let work(
   title: "",
@@ -97,4 +100,32 @@
 #let gh(url) = link(url)[
   #set text(8pt, fill: tw.blue-300)
   #fa-icon("github")
+]
+
+#let header(
+  fullname: "",
+  position: "",
+  location: "",
+  phone: "",
+  email: "",
+  telegram: "",
+  github: "",
+  delimeter: "  ",
+) = [
+  #align(left)[
+    = #text(20pt, weight: "bold")[#fullname]
+    #set text(14pt)
+    ~~#position
+  ]
+
+  #let items = (
+    location,
+    link("tel:" + phone)[#phone],
+    link("mailto:" + email)[#email],
+    link(telegram)[#telegram],
+    link(github)[#github],
+  )
+
+  #v(5pt);
+  #items.join(delimeter) \
 ]
