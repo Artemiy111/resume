@@ -14,8 +14,6 @@
   set text(
     font: "New Computer Modern",
     size: text-size,
-    // top-edge: 1em,
-    // bottom-edge: 0em,
     lang: "ru",
     ligatures: false,
   )
@@ -142,4 +140,9 @@
 
   #v(5pt);
   #filtered.join(delimeter) \
+]
+
+#let stack(body) = [
+  #set text(fill: tw.blue-950)
+  #body
 ]
