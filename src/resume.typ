@@ -7,7 +7,7 @@
 #let text-leading = (text-size * 1.6 - text-size) * 1
 #let accent = tw.blue-900;
 
-#let lang = "es"
+#let lang = sys.inputs.at("lang", default: "ru")
 
 #let t = (
   fullname: (

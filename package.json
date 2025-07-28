@@ -7,5 +7,13 @@
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "scripts": {
+    "compile:ru": "typst compile ./src/resume.typ --input lang=ru && mv src/resume.pdf public/resume-ru.pdf",
+    "compile:en": "typst compile ./src/resume.typ --input lang=en && mv src/resume.pdf public/resume-en.pdf",
+    "compile:es": "typst compile ./src/resume.typ --input lang=es && mv src/resume.pdf public/resume-es.pdf",
+    "compile:png:1": "typst compile ./src/resume.typ -f=png --pages=1 && mv src/resume.png public/resume-1.png",
+    "compile:png:2": "typst compile ./src/resume.typ -f=png --pages=2 && mv src/resume.png public/resume-2.png",
+    "compile": "bun run compile:ru && bun run compile:en && bun run compile:es && bun run compile:png:1 && bun run compile:png:2"
   }
 }
