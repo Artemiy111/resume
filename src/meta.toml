@@ -1,0 +1,76 @@
+[name.firstname]
+ru = "Артемий"
+en = "Artemiy"
+es = "Artemiy"
+
+[name.lastname]
+ru = "Набойщиков"
+en = "Naboishchikov"
+es = "Naboishchikov"
+
+[name.fullname-pattern]
+ru = "{name.lastname} {name.firstname}"
+en = "{name.firstname} {name.lastname}"
+es = "{name.firstname} {name.lastname}"
+
+[position]
+ru = "Frontend Разработчик / Vue"
+en = "Frontend Developer / Vue"
+es = "Desarrollador Frontend / Vue"
+
+[location.find]
+ru = "Москва / Удалённо"
+en = "Moscow / Remote"
+es = "Moscú / Remoto"
+
+[location.moscow]
+ru = "Москва"
+en = "Moscow"
+es = "Moscú"
+
+[location.remove]
+ru = "Удалённо"
+en = "Remote"
+es = "Remoto"
+
+[phone]
+ru = "+7 987 106-04-13"
+en = ""
+es = ""
+
+[telegram]
+ru = "t.me/nartemiy"
+en = "t.me/nartemiy"
+es = "t.me/nartemiy"
+
+[email]
+ru = "mrart111@mail.ru"
+en = "mrart111@mail.ru"
+es = "mrart111@mail.ru"
+
+[github]
+ru = "github.com/Artemiy111"
+en = "github.com/Artemiy111"
+es = "github.com/Artemiy111"
+
+[about.heading]
+ru = "Обо мне"
+en = "About Me"
+es = "Sobre mí"
+
+[edu.heading]
+ru = "Образование"
+en = "Education"
+es = "Educación"
+
+[[edu.info]]
+institution.ru = "МГТУ «СТАНКИН»"
+institution.en = "Moscow State Technological University STANKIN"
+institution.es = "Universidad Tecnológica Estatal de Moscú STANKIN"
+degree.ru = "Программная инженерия"
+degree.en = "Software Engineering"
+degree.es = "Ingeniería de Software"
+dates = "2022 -- 2026"
+location = "moscow"
+
+[[edu.info]]

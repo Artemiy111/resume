@@ -2,40 +2,56 @@
 #import "@preview/fontawesome:0.5.0": *;
 
 #import "lib.typ": *
+#import "inject.typ": *
+
+#let lang = sys.inputs.at("lang", default: "ru")
+#let meta = toml("meta.toml")
 
 #let text-size = 10pt
 #let text-leading = (text-size * 1.6 - text-size) * 1
 #let accent = tw.blue-900;
 
-#let lang = sys.inputs.at("lang", default: "ru")
-
-#let t = (
-  fullname: (
-    ru: "Набойщиков Артемий",
-    en: "Artemiy Naboishchikov",
-    es: "Artemiy Naboishchikov",
-  ),
-  position: (
-    ru: "Frontend Разработчик / Vue",
-    en: "Frontend Developer / Vue",
-    es: "Desarrollador Frontend / Vue",
-  ),
-  location: (
-    ru: "Москва / Удалённо",
-    en: "Moscow / Remote",
-    es: "Moscú / Remoto",
-  ),
-  phone: (
-    ru: "+7 987 106-04-13",
-    en: none,
-    es: none,
-  ),
+#let firstname = meta.name.firstname.at(lang)
+#let lastname = meta.name.lastname.at(lang)
+#let fullname = (
+  meta
+    .name
+    .fullname-pattern
+    .at(lang)
+    .replace(
+      "{name.firstname}",
+      firstname,
+    )
+    .replace(
+      "{name.lastname}",
+      lastname,
+    )
 )
 
-#let fullname = t.fullname.at(lang)
-#let position = t.position.at(lang)
-#let location = t.location.at(lang)
-#let phone = t.phone.at(lang)
+// #let fullname = (
+//   ru: "Набойщиков Артемий",
+//   en: "Artemiy Naboishchikov",
+//   es: "Artemiy Naboishchikov",
+// ).at(lang)
+
+#let position = (
+  ru: "Frontend Разработчик / Vue",
+  en: "Frontend Developer / Vue",
+  es: "Desarrollador Frontend / Vue",
+).at(lang)
+
+#let location = (
+  ru: "Москва / Удалённо",
+  en: "Moscow / Remote",
+  es: "Moscú / Remoto",
+).at(lang)
+
+#let phone = (
+  ru: "+7 987 106-04-13",
+  en: none,
+  es: none,
+).at(lang)
+
 #let telegram = "t.me/nartemiy"
 #let email = "mrart111@mail.ru"
 #let github = "github.com/Artemiy111"
@@ -76,13 +92,13 @@
     ru: "«МГТУ «СТАНКИН»",
     en: "Moscow State Technological University STANKIN",
     es: "Universidad Tecnológica Estatal de Moscú STANKIN",
-  ),
+  ).at(lang),
   degree: (
     ru: "Программная инженерия",
     en: "Software Engineering",
     es: "Ingeniería de Software",
-  ),
-  dates: period(2022, 2026),
+  ).at(lang),
+  dates: [2022 -- 2026],
   location: moscow,
 )
 
@@ -164,7 +180,7 @@
 
 #work(
   title: "Middle Vue Разработчик",
-  dates: period("Май 2025", "Июль 2025"),
+  dates: [Май 2025 -- Июль 2025],
   company: [ООО Голдев -- Программа управления сортировкой посылок с большим кол-вом таблиц],
   location: remote,
 )
@@ -189,9 +205,9 @@
     es: "Desarrollador Vue Junior",
   ).at(lang),
   dates: (
-    ru: period("Сент 2024", "Окт 2024"),
-    en: period("Sep 2024", "Oct 2024"),
-    es: period("Sep 2024", "Oct 2024"),
+    ru: [Сент 2024 -- Окт 2024],
+    en: [Sep 2024 -- Oct 2024],
+    es: [Sep 2024 -- Oct 2024],
   ).at(lang),
   company: (
     ru: [ООО Марбери -- Сайта менеджмента и продажи школьных альбомов],
@@ -223,8 +239,8 @@
 == Образование
 
 #edu(
-  institution: edu-info.institution.at(lang),
-  degree: edu-info.degree.at(lang),
+  institution: edu-info.institution,
+  degree: edu-info.degree,
   dates: edu-info.dates,
   location: edu-info.location,
 )
@@ -235,9 +251,14 @@
 
 #edu(
   institution: "Chongqing Vocational Institute of Engineering",
-  degree: "Стажировка Computer Science",
-  dates: period("Сент", "Ноя 2023"),
-  location: "Чунцин, Китай",
+  degree: (
+    ru: "Стажировка Computer Science",
+    en: "Internship Computer Science",
+    es: "Pasantía en Ciencias de la Computación",
+  ).at(lang),
+  dates: (ru: [Сент -- Ноя 2023], en: [Sep -- Nov 2023], es: [Sep -- Nov 2023]).at(lang),
+  location: (ru: "Чунцин, Китай", en: "Chongqing, China", es: "Chongqing, China").at(lang),
+),
 )
 
 - Веб-скрейпинг на Python
@@ -250,15 +271,41 @@
 - _Backend_: SQL, DrizzleORM, tRPC
 - _DevOps_: Docker, Nginx, Vercel
 
-== Языки
+#let languages = (
+  heading: (
+    ru: "Языки",
+    en: "Languages",
+    es: "Idiomas",
+  ).at(lang),
+  body: (
+    ru: "Английский B2, Испанский A2",
+    en: "Russian Native, English B2, Spanish A2",
+    es: "Ruso Nativo, Inglés B2, Español A2",
+  ).at(lang),
+)
 
-Английский B2, Испанский A2
+== #languages.heading
+
+#languages.body
 
 #pagebreak()
 
-== Проекты
+#let projects = (
+  heading: (
+    ru: "Проекты",
+    en: "Projects",
+    es: "Proyectos",
+  ).at(lang),
+)
 
-- Cайт действующей архитектурной студии Биплан-Дизайн -- Nuxt, DrizzleORM, S3 ~#site("https://biplane-design.com") ~ #gh("https://github.com/Artemiy111/biplane-design.com")
+== #projects.heading
+
+#let biplane = (
+  to: site("https://biplane-design.com"),
+  gh: gh("https://github.com/Artemiy111/biplane-design.com"),
+)
+
+- Cайт действующей архитектурной студии Биплан-Дизайн -- Nuxt, DrizzleORM, S3 ~#biplane.to ~ #biplane.gh
 - Мессенджер -- Oauth, S3, SMTP ~ #gh("https://github.com/Artemiy111/messenger")
 - Редизайн сайта Гелиос -- современный CSS 2024 ~ #gh("https://github.com/Artemiy111/gelios")
 - Камень-Ножницы-Бумага -- дизайн-система и websockets ~ #gh("https://github.com/Artemiy111/rps")
