@@ -1,13 +1,5 @@
 {
-  "type": "module",
   "name": "resume",
-  "module": "index.ts",
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  },
   "scripts": {
     "compile:ru": "typst compile ./src/resume.typ --input lang=ru && mv src/resume.pdf public/resume-ru.pdf",
     "compile:en": "typst compile ./src/resume.typ --input lang=en && mv src/resume.pdf public/resume-en.pdf",
