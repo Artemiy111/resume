@@ -3,8 +3,6 @@
 
 #import "lib.typ": *
 
-#show: resume-preset.with(text-size: 10pt);
-
 #let text-size = 10pt
 #let text-leading = (text-size * 1.6 - text-size) * 1
 #let accent = tw.blue-900;
@@ -23,6 +21,8 @@
   dates: period(2022, 2026),
   location: "Москва",
 )
+
+#show: resume-preset.with(author: fullname, text-size: 10pt);
 
 #header(
   fullname: fullname,

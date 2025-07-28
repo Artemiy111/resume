@@ -3,14 +3,13 @@
 
 #let period(start, end) = [#start $dash.en$ #end]
 
-#let resume-preset(body, accent: tw.blue-900, text-size: 10pt) = {
+#let resume-preset(body, author: "", accent: tw.blue-900, text-size: 10pt) = {
+  set document(author: author, title: author)
+
   set list(marker: [--])
   set par(justify: true, linebreaks: "optimized", leading: 0.8em)
 
-  show link: it => {
-    set text(fill: tw.blue-500)
-    it.body
-  }
+  show link: set text(fill: tw.blue-500)
 
   set text(
     font: "New Computer Modern",
@@ -102,6 +101,19 @@
   #fa-icon("github")
 ]
 
+/*
+ * type: "https://" | "mailto:" | "tel:"
+ */
+#let to(value, prefix: "", type: "") = {
+  if value != "" {
+    if type != "" {
+      link(type + value)[#(prefix + value)]
+    } else {
+      value
+    }
+  }
+}
+
 #let header(
   fullname: "",
   position: "",
@@ -120,12 +132,14 @@
 
   #let items = (
     location,
-    link("tel:" + phone)[#phone],
-    link("mailto:" + email)[#email],
-    link(telegram)[#telegram],
-    link(github)[#github],
+    to(phone, type: "tel:"),
+    to(email, type: "mailto:"),
+    to(telegram, type: "https://"),
+    to(github, type: "https://"),
   )
 
+  #let filtered = items.filter(it => it != "")
+
   #v(5pt);
-  #items.join(delimeter) \
+  #filtered.join(delimeter) \
 ]
