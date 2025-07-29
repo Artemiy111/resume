@@ -3,8 +3,8 @@
 
 #let period(start, end) = [#start $dash.en$ #end]
 
-#let resume-preset(body, author: "", accent: tw.blue-900, text-size: 10pt) = {
-  set document(author: author, title: author)
+#let resume-preset(body, author: "", accent: tw.blue-900, text-size: 10pt, date: datetime.today()) = {
+  set document(author: author, title: author, date: date)
 
   set list(marker: [--])
   set par(justify: true, linebreaks: "optimized", leading: 0.8em)

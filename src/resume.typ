@@ -56,26 +56,33 @@
 )
 
 #let petri = (
-  to: site("https://timed-petri-nets.vercel.app"),
+  site: site("https://timed-petri-nets.vercel.app"),
   gh: gh("https://github.com/Artemiy111/petri-nets"),
 )
 
-#let cpp-parser = gh("https://github.com/idb-22-15/programming/tree/main/art/term3-lab3")
+#let parser = gh("https://github.com/idb-22-15/programming/tree/main/art/term3-lab3")
 
-#let optimization = (
-  to: site("https://optimization-methods.artistick.tech"),
+#let opti = (
+  site: site("https://optimization-methods.artistick.tech"),
   gh: gh("https://github.com/idb-22-15/optimization-methods"),
 )
 
 #let edu-body = (
   ru: [
-    #stack[Assembly, C/C++, C\#, Asp.Net, OpenGl, Unity]
-    - Курсовая: Симулятор временных приоритетных сетей Петри ~ #petri.to ~ #petri.gh
-    - Парсер языка С++ ~ #cpp-parser
-    - Задачи оптимизации: 2D и 3D ~ #optimization.to ~ #optimization.gh
+    - Курсовая: Симулятор временных приоритетных сетей Петри ~ #petri.site ~ #petri.gh
+    - Парсер языка С++ ~ #parser
+    - Задачи оптимизации: 2D и 3D ~ #opti.site ~ #opti.gh
   ],
-  en: none,
-  es: none,
+  en: [
+    - Coursework: Simulator of timed Petri nets ~ #petri.site ~ #petri.gh
+    - C++ language parser ~ #parser
+    - Optimization tasks: 2D and 3D ~ #opti.site ~ #opti.gh
+  ],
+  es: [
+    - Trabajo de curso: Simulador de redes de Petri temporizadas ~ #petri.site ~ #petri.gh
+    - Analizador del lenguaje C++ ~ #parser
+    - Tareas de optimización: 2D y 3D ~ #opti.site ~ #opti.gh
+  ],
 )
 
 #let work-exp = (
@@ -86,7 +93,7 @@
   ),
 )
 
-#show: resume-preset.with(author: fullname, text-size: 10pt);
+#show: resume-preset.with(author: fullname, text-size: 10pt, date: datetime(year: 2025, month: 7, day: 29));
 
 #header(
   fullname: fullname,
@@ -220,6 +227,8 @@
 == #edu-heading
 
 #edu-item(..edu)
+
+#stack[Assembly, C/C++, C\#, Asp.Net, OpenGl, Unity]
 
 #edu-body.at(lang)
 
