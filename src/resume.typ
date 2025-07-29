@@ -62,6 +62,11 @@
   es: "Moscú",
 ).at(lang)
 
+#let nuxt-ui = link("https://github.com/nuxt/ui/issues?q=author%3AArtemiy111")[\@nuxt/ui]
+#let shadcn-vue = link("https://github.com/unovue/shadcn-vue/issues?q=author%3AArtemiy111")[shadcn-vue]
+#let zod = link("https://github.com/colinhacks/zod/issues?q=author%3AArtemiy111")[zod]
+#let vue-forge = link("https://vuejsforge.com/")[VueForge]
+
 #let about = (
   heading: (
     ru: "Обо мне",
@@ -70,19 +75,16 @@
   ).at(lang),
   body: (
     ru: [
-      - Опытный разработчик, специализирующийся на Vue и Nuxt
-      - Умею работать в команде, быстро обучаюсь и адаптируюсь к новым технологиям
-      - Имею опыт разработки сложных пользовательских интерфейсов и архитектуры приложений
+      - Cпециализируюсь на Vue и Nuxt
+      - Контрибьютил в #nuxt-ui, #shadcn-vue и #zod, участвовал в #vue-forge
     ],
     en: [
-      - Experienced developer, specializing in Vue and Nuxt
-      - Able to work in a team, learn quickly and adapt to new technologies
-      - Experienced in developing complex user interfaces and application architecture
+      - Specialize in Vue and Nuxt
+      - Contributed to #nuxt-ui, #shadcn-vue and #zod, participated in #vue-forge
     ],
     es: [
-      - Desarrollador experimentado, especializado en Vue y Nuxt
-      - Capaz de trabajar en equipo, aprender rápidamente y adaptarse a nuevas tecnologías
-      - Experiencia en el desarrollo de interfaces de usuario complejas y arquitectura de aplicaciones
+      - Especializado en Vue y Nuxt
+      - Contribuí a #nuxt-ui, #shadcn-vue y #zod, participé en #vue-forge
     ],
   ).at(lang),
 )
@@ -116,7 +118,7 @@
 
 #let edu-body = (
   ru: [
-    - C/C++, C\#, ASP.NET, OpenGl, Unity, Assembly под MsDOS
+    #stack[Assembly, C/C++, C\#, Asp.Net, OpenGl, Unity]
     - Курсовая: Симулятор временных приоритетных сетей Петри ~ #petri.to ~ #petri.gh
     - Парсер языка С++ ~ #cpp-parser
     - Задачи оптимизации: 2D и 3D ~ #optimization.to ~ #optimization.gh
@@ -125,26 +127,12 @@
   es: none,
 )
 
-#let nuxt-ui = link("https://github.com/nuxt/ui/issues?q=author%3AArtemiy111")[\@nuxt/ui]
-#let shadcn-vue = link("https://github.com/unovue/shadcn-vue/issues?q=author%3AArtemiy111")[shadcn-vue]
-#let zod = link("https://github.com/colinhacks/zod/issues?q=author%3AArtemiy111")[zod]
 
 #let work-exp = (
   heading: (
     ru: "Опыт",
     en: "Work Experience",
     es: "Experiencia laboral",
-  ),
-  body: (
-    ru: [
-      - Контрибьютил в #nuxt-ui, #shadcn-vue и #zod
-    ],
-    en: [
-      - Contributed to #nuxt-ui, #shadcn-vue and #zod
-    ],
-    es: [
-      - Contribuí a #nuxt-ui, #shadcn-vue y #zod
-    ],
   ),
 )
 
@@ -173,8 +161,6 @@
 #about.body
 
 == #work-exp.heading.at(lang)
-
-#work-exp.body.at(lang)
 
 #v(5pt)
 
@@ -217,7 +203,7 @@
   location: remote,
 )\
 
-#stack[gitlab, канбан в youtrack, fsd, vue, nuxt, pinia]
+#stack[gitlab, youtrack, fsd, vue, nuxt, pinia]
 
 #let marbery = (
   ru: [
