@@ -278,21 +278,21 @@
     - _Frontend_: TypeScript, Vue, Nuxt, Pinia, \@pinia/colada, TailwindCSS
     - _Дизайн_: Usability, Акценты, Пространства, Типографика, Figma
     - _Архитектура_: Feature Sliced Design
-    - _Backend_: SQL, DrizzleORM, tRPC
+    - _Backend_: SQL, DrizzleORM, tRPC, gRPC
     - _DevOps_: Docker, Nginx, Vercel
   ],
   en: [
     - _Frontend_: TypeScript, Vue, Nuxt, Pinia, \@pinia/colada, TailwindCSS
     - _Design_: Usability, Accents, Spaces, Typography, Figma
     - _Architecture_: Feature Sliced Design
-    - _Backend_: SQL, DrizzleORM, tRPC
+    - _Backend_: SQL, DrizzleORM, tRPC, gRPC
     - _DevOps_: Docker, Nginx, Vercel
   ],
   es: [
     - _Frontend_: TypeScript, Vue, Nuxt, Pinia, \@pinia/colada, TailwindCSS
     - _Diseño_: Usabilidad, Acentos, Espacios, Tipografía, Figma
     - _Arquitectura_: Feature Sliced Design
-    - _Backend_: SQL, DrizzleORM, tRPC
+    - _Backend_: SQL, DrizzleORM, tRPC, gRPC
     - _DevOps_: Docker, Nginx, Vercel
   ],
 ).at(lang)

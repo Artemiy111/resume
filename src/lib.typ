@@ -27,17 +27,17 @@
     right: 1cm,
   ))
 
-  show heading: it => [
-    #set text(fill: accent, 16pt)
-    #set text(16pt, weight: "bold")
-    #it.body
-  ]
+  show heading: it => {
+    set text(fill: accent, 16pt)
+    set text(16pt, weight: "bold")
+    it.body
+  }
 
-  show heading.where(level: 2): it => [
-    #set text(fill: accent)
-    #pad(top: 0pt, bottom: -10pt, [#smallcaps(it.body)])
-    #line(length: 100%, stroke: 0.2pt)
-  ]
+  show heading.where(level: 2): it => {
+    set text(fill: accent)
+    pad(top: 0pt, bottom: -10pt, [#smallcaps(it.body)])
+    line(length: 100%, stroke: 0.2pt)
+  }
 
   body
 }
@@ -144,10 +144,10 @@
   #filtered.join(delimeter) \
 ]
 
-#let stack(body) = [
-  #set text(fill: tw.blue-950)
-  #body
-]
+#let stack(body) = {
+  set text(fill: tw.blue-950)
+  body
+}
 
 #let get-link(link-obj) = {
   link(link-obj.dest)[#raw(link-obj.body)]
