@@ -61,7 +61,7 @@
   ]
 }
 
-#let edu(
+#let edu-item(
   institution: "",
   degree: "",
   dates: "",
@@ -75,7 +75,7 @@
   )
 }
 
-#let work(
+#let work-item(
   title: "",
   dates: "",
   company: "",
@@ -102,7 +102,7 @@
 /*
  * type: "https://" | "mailto:" | "tel:"
  */
-#let to(value, prefix: "", type: "") = {
+#let link-with-type(value, prefix: "", type: "") = {
   if value != "" {
     if type != "" {
       link(type + value)[#(prefix + value)]
@@ -130,10 +130,10 @@
 
   #let items = (
     location,
-    to(phone, type: "tel:"),
-    to(email, type: "mailto:"),
-    to(telegram, type: "https://"),
-    to(github, type: "https://"),
+    link-with-type(phone, type: "tel:"),
+    link-with-type(email, type: "mailto:"),
+    link-with-type(telegram, type: "https://"),
+    link-with-type(github, type: "https://"),
   )
 
   #let filtered = items.filter(it => it != "")
@@ -146,3 +146,7 @@
   #set text(fill: tw.blue-950)
   #body
 ]
+
+#let get-link(link-obj) = {
+  link(link-obj.dest)[#raw(link-obj.body)]
+}

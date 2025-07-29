@@ -1,76 +1,70 @@
-[name.firstname]
-ru = "Артемий"
-en = "Artemiy"
-es = "Artemiy"
+[ru]
+about.heading = "Обо мне"
+edu.heading = "Образование"
+work.heading = "Опыт"
+skills.heading = "Навыки"
+projects.heading = "Проекты"
+languages.heading = "Языки"
+remote = "Удалённо"
 
-[name.lastname]
-ru = "Набойщиков"
-en = "Naboishchikov"
-es = "Naboishchikov"
+fullname = "Набойщиков Артемий"
+position = "Frontend Разработчик / Vue"
+location = "Москва / Удалённо"
 
-[name.fullname-pattern]
-ru = "{name.lastname} {name.firstname}"
-en = "{name.firstname} {name.lastname}"
-es = "{name.firstname} {name.lastname}"
+[en]
+about.heading = "About Me"
+edu.heading = "Education"
+work.heading = "Work Experience"
+skills.heading = "Skills"
+projects.heading = "Projects"
+languages.heading = "Languages"
+remote = "Remote"
 
-[position]
-ru = "Frontend Разработчик / Vue"
-en = "Frontend Developer / Vue"
-es = "Desarrollador Frontend / Vue"
+fullname = "Artemiy Naboishchikov"
+position = "Frontend Developer / Vue"
+location = "Moscow / Remote"
 
-[location.find]
-ru = "Москва / Удалённо"
-en = "Moscow / Remote"
-es = "Moscú / Remoto"
+[es]
+about.heading = "Sobre mí"
+edu.heading = "Educación"
+work.heading = "Experiencia Laboral"
+skills.heading = "Habilidades"
+projects.heading = "Proyectos"
+languages.heading = "Idiomas"
+remote = "Remoto"
+
+fullname = "Artemiy Naboishchikov"
+position = "Desarrollador Frontend / Vue"
+location = "Moscú / Remoto"
+
+[common]
+email = "mrart111@mail.ru"
+telegram = "t.me/nartemiy"
+github = "github.com/Artemiy111"
+phone = { ru = "+7 987 106-04-13", en = "", es = "" }
+
+[common.links]
+nuxt-ui = {dest = "https://github.com/nuxt/ui/issues?q=author%3AArtemiy111", body = "@nuxt/ui"}
+shadcn-vue = {dest = "https://github.com/unovue/shadcn-vue/issues?q=author%3AArtemiy111", body = "shadcn-vue"}
+zod = {dest = "https://github.com/colinhacks/zod/issues?q=author%3AArtemiy111", body = "zod"}
+vue-forge = {dest = "https://vuejsforge.com", body = "Vue Forge"}
 
 [location.moscow]
 ru = "Москва"
 en = "Moscow"
 es = "Moscú"
 
-[location.remove]
-ru = "Удалённо"
-en = "Remote"
-es = "Remoto"
+# [location.remove]
+# ru = "Удалённо"
+# en = "Remote"
+# es = "Remoto"
 
-[phone]
-ru = "+7 987 106-04-13"
-en = ""
-es = ""
-
-[telegram]
-ru = "t.me/nartemiy"
-en = "t.me/nartemiy"
-es = "t.me/nartemiy"
-
-[email]
-ru = "mrart111@mail.ru"
-en = "mrart111@mail.ru"
-es = "mrart111@mail.ru"
-
-[github]
-ru = "github.com/Artemiy111"
-en = "github.com/Artemiy111"
-es = "github.com/Artemiy111"
-
-[about.heading]
-ru = "Обо мне"
-en = "About Me"
-es = "Sobre mí"
-
-[edu.heading]
-ru = "Образование"
-en = "Education"
-es = "Educación"
-
-[[edu.info]]
-institution.ru = "МГТУ «СТАНКИН»"
-institution.en = "Moscow State Technological University STANKIN"
-institution.es = "Universidad Tecnológica Estatal de Moscú STANKIN"
-degree.ru = "Программная инженерия"
-degree.en = "Software Engineering"
-degree.es = "Ingeniería de Software"
-dates = "2022 -- 2026"
-location = "moscow"
-
-[[edu.info]]
+# [[edu.info]]
+# institution.ru = "МГТУ «СТАНКИН»"
+# institution.en = "Moscow State Technological University STANKIN"
+# institution.es = "Universidad Tecnológica Estatal de Moscú STANKIN"
+# degree.ru = "Программная инженерия"
+# degree.en = "Software Engineering"
+# degree.es = "Ingeniería de Software"
+# dates = "2022 -- 2026"
+# location = "moscow"

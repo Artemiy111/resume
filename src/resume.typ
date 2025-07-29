@@ -11,85 +11,36 @@
 #let text-leading = (text-size * 1.6 - text-size) * 1
 #let accent = tw.blue-900;
 
-#let firstname = meta.name.firstname.at(lang)
-#let lastname = meta.name.lastname.at(lang)
-#let fullname = (
-  meta
-    .name
-    .fullname-pattern
-    .at(lang)
-    .replace(
-      "{name.firstname}",
-      firstname,
-    )
-    .replace(
-      "{name.lastname}",
-      lastname,
-    )
-)
+#let (fullname, position, location, remote) = meta.at(lang)
 
-// #let fullname = (
-//   ru: "Набойщиков Артемий",
-//   en: "Artemiy Naboishchikov",
-//   es: "Artemiy Naboishchikov",
-// ).at(lang)
+#let phone = meta.common.phone.at(lang)
+#let (telegram, github, email) = meta.common
 
-#let position = (
-  ru: "Frontend Разработчик / Vue",
-  en: "Frontend Developer / Vue",
-  es: "Desarrollador Frontend / Vue",
+#let moscow = meta.location.moscow.at(lang)
+
+#let nuxt-ui = get-link(meta.common.links.nuxt-ui)
+#let shadcn-vue = get-link(meta.common.links.shadcn-vue)
+#let zod = get-link(meta.common.links.zod)
+#let vue-forge = get-link(meta.common.links.vue-forge)
+
+#let about-heading = meta.at(lang).about.heading
+
+#let about-body = (
+  ru: [
+    - Cпециализируюсь на Vue и Nuxt
+    - Контрибьютил в #nuxt-ui, #shadcn-vue и #zod, участвовал в #vue-forge
+  ],
+  en: [
+    - Specialize in Vue and Nuxt
+    - Contributed to #nuxt-ui, #shadcn-vue and #zod, participated in #vue-forge
+  ],
+  es: [
+    - Especializado en Vue y Nuxt
+    - Contribuí a #nuxt-ui, #shadcn-vue y #zod, participé en #vue-forge
+  ],
 ).at(lang)
 
-#let location = (
-  ru: "Москва / Удалённо",
-  en: "Moscow / Remote",
-  es: "Moscú / Remoto",
-).at(lang)
-
-#let phone = (
-  ru: "+7 987 106-04-13",
-  en: none,
-  es: none,
-).at(lang)
-
-#let telegram = "t.me/nartemiy"
-#let email = "mrart111@mail.ru"
-#let github = "github.com/Artemiy111"
-
-#let moscow = (
-  ru: "Москва",
-  en: "Moscow",
-  es: "Moscú",
-).at(lang)
-
-#let nuxt-ui = link("https://github.com/nuxt/ui/issues?q=author%3AArtemiy111")[\@nuxt/ui]
-#let shadcn-vue = link("https://github.com/unovue/shadcn-vue/issues?q=author%3AArtemiy111")[shadcn-vue]
-#let zod = link("https://github.com/colinhacks/zod/issues?q=author%3AArtemiy111")[zod]
-#let vue-forge = link("https://vuejsforge.com/")[VueForge]
-
-#let about = (
-  heading: (
-    ru: "Обо мне",
-    en: "About Me",
-    es: "Sobre mí",
-  ).at(lang),
-  body: (
-    ru: [
-      - Cпециализируюсь на Vue и Nuxt
-      - Контрибьютил в #nuxt-ui, #shadcn-vue и #zod, участвовал в #vue-forge
-    ],
-    en: [
-      - Specialize in Vue and Nuxt
-      - Contributed to #nuxt-ui, #shadcn-vue and #zod, participated in #vue-forge
-    ],
-    es: [
-      - Especializado en Vue y Nuxt
-      - Contribuí a #nuxt-ui, #shadcn-vue y #zod, participé en #vue-forge
-    ],
-  ).at(lang),
-)
-
-#let edu-info = (
+#let edu = (
   institution: (
     ru: "«МГТУ «СТАНКИН»",
     en: "Moscow State Technological University STANKIN",
@@ -127,7 +78,6 @@
   es: none,
 )
 
-
 #let work-exp = (
   heading: (
     ru: "Опыт",
@@ -135,12 +85,6 @@
     es: "Experiencia laboral",
   ),
 )
-
-#let remote = (
-  ru: "Удалённо",
-  en: "Remote",
-  es: "Remoto",
-).at(lang)
 
 #show: resume-preset.with(author: fullname, text-size: 10pt);
 
@@ -156,56 +100,105 @@
 
 #v(5pt)
 
-== #about.heading
+== #about-heading
 
-#about.body
+#about-body
 
 == #work-exp.heading.at(lang)
 
 #v(5pt)
 
-#work(
-  title: "Middle Vue Разработчик",
-  dates: [Май 2025 -- Июль 2025],
-  company: [ООО Голдев -- Программа управления сортировкой посылок с большим кол-вом таблиц],
-  location: remote,
-)
+#let goldev = (
+  ru: (
+    title: "Middle Vue Разработчик",
+    dates: [Май 2025 -- Июль 2025],
+    company: [ООО Голдев -- Программа управления сортировкой посылок с большим кол-вом таблиц],
+    location: remote,
+  ),
+  en: (
+    title: "Middle Vue Developer",
+    dates: [May 2025 -- Jul 2025],
+    company: [LLC Goldev -- Program for managing parcel sorting with many tables],
+    location: remote,
+  ),
+  es: (
+    title: "Desarrollador Vue Intermedio",
+    dates: [May 2025 -- Jul 2025],
+    company: [LLC Goldev -- Programa de gestión de clasificación de paquetes con muchas tablas],
+    location: remote,
+  ),
+).at(lang)
+
+#let goldev-body = (
+  ru: [
+    - Занимался полным циклом разработки от начала и до сдачи проекта
+    - Внедрил архитектуру FSD, настроил eslint и pnpm монорепо, .env, build флаги
+    - Реализовал бóльшую часть ui компонентов на основе Figma, вдохновляясь \@nuxt/ui и shadcn-vue, документировал в Histoire и JSDoc
+    - Спроектировал сложный кастомизируемый компонент таблицы с пагинацией, фильтрацией, сортировкой, резайзом и синхронизации с url, используя \@tanstack/vue-table
+    - Проектировал REST API, описывал контракты, экспортируя JSON Schema из zod
+    - Заменил REAT API на gRPC: описал контракты в Protobuf и вынес SDK в npm пакет с помощью tsdown, что сократило время загрузки в \~2 раза и объём данных в \~3 раза
+    - Внедрил \@pinia/colada для инвалидации и кеширования данных с API
+    - Написал кастомный брокер сообщений для статусов посылок с приоритизацией и повторной отправкой
+    - Написал большое кол-во форм с валидацией, используя vee-validate и zod
+  ],
+  en: [
+    - Worked on the full development cycle from start to project delivery
+    - Implemented FSD architecture, set up eslint and pnpm monorepo, .env, build flags
+    - Developed most of the UI components based on Figma, inspired by \@nuxt/ui and shadcn-vue, documented in Histoire and JSDoc
+    - Designed a complex customizable table component with pagination, filtering, sorting, resizing and URL synchronization using \@tanstack/vue-table
+    - Designed REST API, described contracts, exporting JSON Schema from zod
+    - Replaced REST API with gRPC: described contracts in Protobuf and moved SDK to npm package using tsdown, which reduced loading time by ~2 times and data size by ~3 times
+    - Implemented \@pinia/colada for data invalidation and caching with API
+    - Wrote custom message broker for parcel statuses with prioritization and retrying
+    - Created a large number of forms with validation using vee-validate and zod
+  ],
+  es: [
+    - Trabajé en el ciclo completo de desarrollo desde el inicio hasta la entrega del proyecto
+    - Implementé la arquitectura FSD, configuré eslint y pnpm monorepo, .env, banderas de compilación
+    - Desarrollé la mayoría de los componentes de la interfaz de usuario basados en Figma, inspirado en \@nuxt/ui y shadcn-vue, documentado en Histoire y JSDoc
+    - Diseñé un componente de tabla complejo y personalizable con paginación, filtrado, ordenación, cambio de tamaño y sincronización con URL utilizando \@tanstack/vue-table
+    - Diseñé la API REST, describí los contratos, exportando JSON Schema desde zod
+    - Reemplacé la API REST por gRPC: describí los contratos en Protobuf y moví el SDK a un paquete npm usando tsdown, lo que redujo el tiempo de carga en ~2 veces y el tamaño de los datos en ~3 veces
+    - Implementé \@pinia/colada para la invalidación y el almacenamiento en caché de datos con la API
+    - Escribí un corredor de mensajes personalizado para los estados de los paquetes con priorización y reintentos
+    - Creé una gran cantidad de formularios con validación utilizando vee-validate y zod
+  ],
+).at(lang)
+
+#work-item(..goldev)
 
 #stack[yandex tracker, fsd, vue, reka-ui, vee-validate, \@pinia/colada, zod, nice-grpc, ts-proto, histoire, vitest, tsdown, electron]
-- Занимался полным циклом разработки от начала и до сдачи проекта
-- Внедрил архитектуру FSD, настроил eslint и pnpm монорепо, .env, build флаги
-- Реализовал бóльшую часть ui компонентов на основе Figma, вдохновляясь \@nuxt/ui и shadcn-vue, документировал в Histoire и JSDoc
-- Спроектировал сложный кастомизируемый компонент таблицы с пагинацией, фильтрацией, сортировкой, резайзом и синхронизации с url, используя \@tanstack/vue-table
-- Проектировал REST API, описывал контракты, экспортируя JSON Schema из zod
-- Заменил REAT API на gRPC: описал контракты в Protobuf и вынес SDK в npm пакет с помощью tsdown, что сократило время загрузки в \~2 раза и объём данных в \~3 раза
-- Внедрил \@pinia/colada для инвалидации и кеширования данных с API
-- Написал кастомный брокер сообщений для статусов посылок с приоритизацией и повторной отправкой
-- Написал большое кол-во форм с валидацией, используя vee-validate и zod
+
+#goldev-body
 
 #v(5pt)
 
-#work(
-  title: (
-    ru: "Junior Vue Разработчик",
-    en: "Junior Vue Developer",
-    es: "Desarrollador Vue Junior",
-  ).at(lang),
-  dates: (
-    ru: [Сент 2024 -- Окт 2024],
-    en: [Sep 2024 -- Oct 2024],
-    es: [Sep 2024 -- Oct 2024],
-  ).at(lang),
-  company: (
-    ru: [ООО Марбери -- Сайта менеджмента и продажи школьных альбомов],
-    en: [LLC Marberry -- School album management and sales website],
-    es: [LLC Marberry -- Sitio web de gestión y venta de álbumes],
-  ).at(lang),
-  location: remote,
-)\
+#let marbery = (
+  ru: (
+    title: "Junior Vue Разработчик",
+    dates: [Сент 2024 -- Окт 2024],
+    company: [ООО Марбери -- Сайта менеджмента и продажи школьных альбомов],
+    location: remote,
+  ),
+  en: (
+    title: "Junior Vue Developer",
+    dates: [Sep 2024 -- Oct 2024],
+    company: [LLC Marberry -- School album management and sales website],
+    location: remote,
+  ),
+  es: (
+    title: "Desarrollador Vue Junior",
+    dates: [Sep 2024 -- Oct 2024],
+    company: [LLC Marberry -- Sitio web de gestión y venta de álbumes],
+    location: remote,
+  ),
+).at(lang)
+
+#work-item(..marbery)\
 
 #stack[gitlab, youtrack, fsd, vue, nuxt, pinia]
 
-#let marbery = (
+#let marbery-body = (
   ru: [
     - Разрабатывал сайт внутренней документации OpenAPI
     - Создавал конструктор форм с drag&drop - аналог Google Forms
@@ -220,79 +213,131 @@
   ],
 ).at(lang)
 
-#marbery
+#marbery-body
 
-== Образование
+#let edu-heading = meta.at(lang).edu.heading
 
-#edu(
-  institution: edu-info.institution,
-  degree: edu-info.degree,
-  dates: edu-info.dates,
-  location: edu-info.location,
-)
+== #edu-heading
+
+#edu-item(..edu)
 
 #edu-body.at(lang)
 
 #v(5pt)
 
-#edu(
-  institution: "Chongqing Vocational Institute of Engineering",
-  degree: (
-    ru: "Стажировка Computer Science",
-    en: "Internship Computer Science",
-    es: "Pasantía en Ciencias de la Computación",
-  ).at(lang),
-  dates: (ru: [Сент -- Ноя 2023], en: [Sep -- Nov 2023], es: [Sep -- Nov 2023]).at(lang),
-  location: (ru: "Чунцин, Китай", en: "Chongqing, China", es: "Chongqing, China").at(lang),
-),
+#let chong = (
+  ru: (
+    institution: "Chongqing Vocational Institute of Engineering",
+    degree: "Стажировка Computer Science",
+    dates: [Сент -- Ноя 2023],
+    location: "Чунцин, Китай",
+  ),
+  en: (
+    institution: "Chongqing Vocational Institute of Engineering",
+    degree: "Internship Computer Science",
+    dates: [Sep -- Nov 2023],
+    location: "Chongqing, China",
+  ),
+  es: (
+    institution: "Chongqing Vocational Institute of Engineering",
+    degree: "Pasantía en Ciencias de la Computación",
+    dates: [Sep -- Nov 2023],
+    location: "Chongqing, China",
+  ),
+).at(lang)
+
+#let chong-body = (
+  ru: [
+    - Веб-скрейпинг на Python
+  ],
+  en: [
+    - Web scraping in Python
+  ],
+  es: [
+    - Web scraping en Python
+  ],
 )
 
-- Веб-скрейпинг на Python
+#edu-item(..chong)
 
-== Навыки
+#chong-body.at(lang)
 
-- _Frontend_: TypeScript, Vue, Nuxt, Pinia, \@pinia/colada, TailwindCSS
-- _Дизайн_: Usability, Акценты, Пространства, Типографика, Figma
-- _Архитектура_: Feature Sliced Design
-- _Backend_: SQL, DrizzleORM, tRPC
-- _DevOps_: Docker, Nginx, Vercel
+#let skills-heading = meta.at(lang).skills.heading
 
-#let languages = (
-  heading: (
-    ru: "Языки",
-    en: "Languages",
-    es: "Idiomas",
-  ).at(lang),
-  body: (
-    ru: "Английский B2, Испанский A2",
-    en: "Russian Native, English B2, Spanish A2",
-    es: "Ruso Nativo, Inglés B2, Español A2",
-  ).at(lang),
-)
+#let skills-body = (
+  ru: [
+    - _Frontend_: TypeScript, Vue, Nuxt, Pinia, \@pinia/colada, TailwindCSS
+    - _Дизайн_: Usability, Акценты, Пространства, Типографика, Figma
+    - _Архитектура_: Feature Sliced Design
+    - _Backend_: SQL, DrizzleORM, tRPC
+    - _DevOps_: Docker, Nginx, Vercel
+  ],
+  en: [
+    - _Frontend_: TypeScript, Vue, Nuxt, Pinia, \@pinia/colada, TailwindCSS
+    - _Design_: Usability, Accents, Spaces, Typography, Figma
+    - _Architecture_: Feature Sliced Design
+    - _Backend_: SQL, DrizzleORM, tRPC
+    - _DevOps_: Docker, Nginx, Vercel
+  ],
+  es: [
+    - _Frontend_: TypeScript, Vue, Nuxt, Pinia, \@pinia/colada, TailwindCSS
+    - _Diseño_: Usabilidad, Acentos, Espacios, Tipografía, Figma
+    - _Arquitectura_: Feature Sliced Design
+    - _Backend_: SQL, DrizzleORM, tRPC
+    - _DevOps_: Docker, Nginx, Vercel
+  ],
+).at(lang)
 
-== #languages.heading
+== #skills-heading
 
-#languages.body
+#skills-body
+
+#let languages-heading = meta.at(lang).languages.heading
+
+#let languages-body = (
+  ru: "Английский B2, Испанский A2",
+  en: "Russian Native, English B2, Spanish A2",
+  es: "Ruso Nativo, Inglés B2, Español A2",
+).at(lang)
+
+== #languages-heading
+
+#languages-body
 
 #pagebreak()
 
-#let projects = (
-  heading: (
-    ru: "Проекты",
-    en: "Projects",
-    es: "Proyectos",
-  ).at(lang),
-)
-
-== #projects.heading
+#let projects-heading = meta.at(lang).projects.heading
 
 #let biplane = (
-  to: site("https://biplane-design.com"),
+  site: site("https://biplane-design.com"),
   gh: gh("https://github.com/Artemiy111/biplane-design.com"),
 )
 
-- Cайт действующей архитектурной студии Биплан-Дизайн -- Nuxt, DrizzleORM, S3 ~#biplane.to ~ #biplane.gh
-- Мессенджер -- Oauth, S3, SMTP ~ #gh("https://github.com/Artemiy111/messenger")
-- Редизайн сайта Гелиос -- современный CSS 2024 ~ #gh("https://github.com/Artemiy111/gelios")
-- Камень-Ножницы-Бумага -- дизайн-система и websockets ~ #gh("https://github.com/Artemiy111/rps")
-- Бронирование номеров в отеле -- формы, SMTP ~ #gh("https://github.com/Artemiy111/hotel")
+#let messenger = gh("https://github.com/Artemiy111/messenger")
+#let gelios = gh("https://github.com/Artemiy111/gelios")
+#let hotel = gh("https://github.com/Artemiy111/hotel")
+
+#let project-body = (
+  ru: [
+    - Cайт действующей архитектурной студии Биплан-Дизайн -- Nuxt, DrizzleORM, S3 ~#biplane.site ~ #biplane.gh
+    - Мессенджер -- Oauth, S3, SMTP ~ #messenger
+    - Редизайн сайта Гелиос -- современный CSS 2024 ~ #gelios
+    - Бронирование номеров в отеле -- формы, SMTP ~ #hotel
+  ],
+  en: [
+    - Website of the active architectural studio Biplane-Design -- Nuxt, DrizzleORM, S3 ~#biplane.site ~ #biplane.gh
+    - Messenger -- Oauth, S3, SMTP ~ #messenger
+    - Redesign of the Gelios website -- modern CSS 2024 ~ #gelios
+    - Hotel room booking -- forms, SMTP ~ #hotel
+  ],
+  es: [
+    - Sitio web del estudio de arquitectura activo Biplane-Design -- Nuxt, DrizzleORM, S3 ~#biplane.site ~ #biplane.gh
+    - Mensajero -- Oauth, S3, SMTP ~ #messenger
+    - Rediseño del sitio web de Gelios -- CSS moderno 2024 ~ #gelios
+    - Reserva de habitaciones de hotel -- formularios, SMTP ~ #hotel
+  ],
+).at(lang)
+
+== #projects-heading
+
+#project-body
