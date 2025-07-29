@@ -93,7 +93,7 @@
   ),
 )
 
-#show: resume-preset.with(author: fullname, text-size: 10pt, date: datetime(year: 2025, month: 7, day: 29));
+#show: resume-preset.with(author: fullname, text-size: 10pt);
 
 #header(
   fullname: fullname,
