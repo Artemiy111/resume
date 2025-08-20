@@ -150,7 +150,7 @@
     - Сделал формы с валидацией, используя vee-validate и zod
 
     *Проект 2: Сайт компании Goldev*\
-    #stack[fsd, nuxt, reka-ui, tailwindcss, tailwind-varinats]
+    #stack[fsd, nuxt, reka-ui, tailwindcss, tailwind-variants]
 
     - Сверстал сложный лендинг на современном CSS, включая техники fluid шрифта и контейнерных запросов
     - Сделал анимации с применением (framer) motion
