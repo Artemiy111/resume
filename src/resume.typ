@@ -119,7 +119,7 @@
   ru: (
     title: "Frontend Разработчик / Vue",
     dates: [Май 2025 -- Авг 2025],
-    company: [ООО Голдев -- Программа управления сортировкой посылок с большим кол-вом таблиц],
+    company: [ООО Голдев -- It компания, разрабатывающая ПО],
     location: remote,
   ),
   en: (
@@ -138,6 +138,9 @@
 
 #let goldev-body = (
   ru: [
+    *Проект 1: Программа управления сортировкой посылок с большим кол-вом таблиц*\
+    #stack[fsd, vue, reka-ui, vee-validate, \@pinia/colada, zod, grpc, histoire, vitest]
+
     - Занимался полным циклом разработки от начала и до сдачи проекта
     - Внедрил архитектуру Feature Sliced Design
     - Реализовал бóльшую часть UI компонентов, вдохновляясь \@nuxt/ui, документировал в Storybook/Histoire
@@ -145,6 +148,12 @@
     - gRPC: описал контракты в Protobuf и вынес клиентский SDK в пакет
     - Внедрил \@pinia/colada для инвалидации и кеширования данных с API
     - Сделал формы с валидацией, используя vee-validate и zod
+
+    *Проект 2: Сайт компании Goldev*\
+    #stack[fsd, nuxt, reka-ui, tailwindcss, tailwind-varinats]
+
+    - Сверстал сложный лендинг на современном CSS, включая техники fluid шрифта и контейнерных запросов
+    - Сделал анимации с применением (framer) motion
   ],
   en: [
     - Worked on the full development cycle from start to project delivery
@@ -172,8 +181,6 @@
 
 #work-item(..goldev)
 
-#stack[yandex tracker, fsd, vue, reka-ui, vee-validate, \@pinia/colada, zod, nice-grpc, ts-proto, histoire, vitest, tsdown, electron]
-
 #goldev-body
 
 #v(5pt)
@@ -182,7 +189,7 @@
   ru: (
     title: "Junior Frontend Разработчик / Vue",
     dates: [Июнь 2024 -- Окт 2024],
-    company: [ООО Марбери -- Сайта менеджмента и продажи школьных альбомов],
+    company: [ООО Марбери -- Сайт менеджмента и продажи школьных альбомов],
     location: remote,
   ),
   en: (
@@ -203,7 +210,7 @@
   ru: [
     - Разрабатывал сайт внутренней документации OpenAPI -- аналог VK Api
     - Создавал конструктор форм с drag&drop -- аналог Google Forms
-    – Писал внутренюю библиотеку компонентов на основе reka-ui
+    - Писал внутренюю библиотеку компонентов на основе reka-ui
   ],
   en: [
     - Developed internal documentation website with OpenAPI
@@ -227,7 +234,7 @@
   ru: (
     title: "Fullstask Разработчик / Nuxt",
     dates: [Янв 2024 -- Май 2024],
-    company: [ООО Биплан-Дизайн -- Архитектурная студия],
+    company: [ООО Биплан-Дизайн -- Сайт архитектурной студии],
     location: remote,
   ),
   en: (
