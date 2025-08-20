@@ -140,7 +140,7 @@
   ru: [
     - Занимался полным циклом разработки от начала и до сдачи проекта
     - Внедрил архитектуру Feature Sliced Design
-    - Реализовал бóльшую часть UI компонентов на основе Figma, вдохновляясь \@nuxt/ui, документировал в Storybook/Histoire
+    - Реализовал бóльшую часть UI компонентов, вдохновляясь \@nuxt/ui, документировал в Storybook/Histoire
     - Спроектировал компонент таблицы с пагинацией, фильтрацией, сортировкой, резайзом и синхронизации с url, используя \@tanstack/vue-table
     - gRPC: описал контракты в Protobuf и вынес клиентский SDK в пакет
     - Внедрил \@pinia/colada для инвалидации и кеширования данных с API
@@ -199,14 +199,11 @@
   ),
 ).at(lang)
 
-#work-item(..marbery)\
-
-#stack[gitlab, youtrack, fsd, vue, nuxt, pinia]
-
 #let marbery-body = (
   ru: [
     - Разрабатывал сайт внутренней документации OpenAPI -- аналог VK Api
     - Создавал конструктор форм с drag&drop -- аналог Google Forms
+    – Писал внутренюю библиотеку компонентов на основе reka-ui
   ],
   en: [
     - Developed internal documentation website with OpenAPI
@@ -218,7 +215,62 @@
   ],
 ).at(lang)
 
+#work-item(..marbery)\
+
+#stack[gitlab, youtrack, fsd, vue, nuxt, pinia]
+
 #marbery-body
+
+#v(5pt)
+
+#let biplane-design = (
+  ru: (
+    title: "Fullstask Разработчик / Nuxt",
+    dates: [Янв 2024 -- Май 2024],
+    company: [ООО Биплан-Дизайн -- Архитектурная студия],
+    location: remote,
+  ),
+  en: (
+    title: "Fullstack Developer / Nuxt",
+    dates: [Jan 2024 -- May 2024],
+    company: [LLC Biplane-Design -- Architectural studio],
+    location: remote,
+  ),
+  es: (
+    title: "Desarrollador Fullstack / Nuxt",
+    dates: [Ene 2024 -- May 2024],
+    company: [LLC Biplane-Design -- Estudio de arquitectura],
+    location: remote,
+  ),
+).at(lang)
+
+#let biplane-desing-body = (
+  ru: [
+    С 0 разработал сайт https://biplane-design.com \
+
+    - Составил список требований к проекту
+    - Спроктировал базу
+    - Сделал админку (мини CMS) с возможностью управления проектами и загрузки фото
+    - Сделал авторизацию по куки
+    - Задеплоил на Vercel
+  ],
+  en: [
+    - Developed internal documentation website with OpenAPI
+    - Created form builder with drag&drop -- similar to Google Forms
+    - Wrote internal component library based on reka-ui
+  ],
+  es: [
+    - Desarrollé el sitio web de documentación interna con OpenAPI
+    - Creé un generador de formularios con arrastrar y soltar - similar a Google Forms
+    - Escribí una biblioteca de componentes interna basada en reka-ui
+  ],
+).at(lang)
+
+#work-item(..biplane-design)\
+
+#stack[nuxt, shadcn-vue, vee-validate, \@pinia/colada, drizzle orm, s3]
+
+#biplane-desing-body
 
 #let edu-heading = meta.at(lang).edu.heading
 
@@ -310,8 +362,6 @@
 == #languages-heading
 
 #languages-body
-
-#pagebreak()
 
 #let projects-heading = meta.at(lang).projects.heading
 
