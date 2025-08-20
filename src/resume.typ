@@ -13,7 +13,7 @@
 
 #let (fullname, position, location, remote) = meta.at(lang)
 
-#let phone = meta.common.phone.at(lang)
+// #let phone = meta.common.phone.at(lang)
 #let (telegram, github, email) = meta.common
 
 #let moscow = meta.location.moscow.at(lang)
@@ -99,7 +99,7 @@
   fullname: fullname,
   position: position,
   location: location,
-  phone: phone,
+  // phone: phone,
   email: email,
   telegram: telegram,
   github: github,
@@ -117,20 +117,20 @@
 
 #let goldev = (
   ru: (
-    title: "Middle Vue Разработчик",
-    dates: [Май 2025 -- Июль 2025],
+    title: "Frontend Разработчик / Vue",
+    dates: [Май 2025 -- Авг 2025],
     company: [ООО Голдев -- Программа управления сортировкой посылок с большим кол-вом таблиц],
     location: remote,
   ),
   en: (
     title: "Middle Vue Developer",
-    dates: [May 2025 -- Jul 2025],
+    dates: [May 2025 -- Aug 2025],
     company: [LLC Goldev -- Program for managing parcel sorting with many tables],
     location: remote,
   ),
   es: (
     title: "Desarrollador Vue Intermedio",
-    dates: [May 2025 -- Jul 2025],
+    dates: [May 2025 -- Ago 2025],
     company: [LLC Goldev -- Programa de gestión de clasificación de paquetes con muchas tablas],
     location: remote,
   ),
@@ -139,14 +139,12 @@
 #let goldev-body = (
   ru: [
     - Занимался полным циклом разработки от начала и до сдачи проекта
-    - Внедрил архитектуру FSD, настроил eslint и pnpm монорепо, .env, build флаги
-    - Реализовал бóльшую часть ui компонентов на основе Figma, вдохновляясь \@nuxt/ui и shadcn-vue, документировал в Histoire и JSDoc
-    - Спроектировал сложный кастомизируемый компонент таблицы с пагинацией, фильтрацией, сортировкой, резайзом и синхронизации с url, используя \@tanstack/vue-table
-    - Проектировал REST API, описывал контракты, экспортируя JSON Schema из zod
-    - Заменил REAT API на gRPC: описал контракты в Protobuf и вынес SDK в npm пакет с помощью tsdown, что сократило время загрузки в \~2 раза и объём данных в \~3 раза
+    - Внедрил архитектуру Feature Sliced Design
+    - Реализовал бóльшую часть UI компонентов на основе Figma, вдохновляясь \@nuxt/ui, документировал в Storybook/Histoire
+    - Спроектировал компонент таблицы с пагинацией, фильтрацией, сортировкой, резайзом и синхронизации с url, используя \@tanstack/vue-table
+    - gRPC: описал контракты в Protobuf и вынес клиентский SDK в пакет
     - Внедрил \@pinia/colada для инвалидации и кеширования данных с API
-    - Написал кастомный брокер сообщений для статусов посылок с приоритизацией и повторной отправкой
-    - Написал большое кол-во форм с валидацией, используя vee-validate и zod
+    - Сделал формы с валидацией, используя vee-validate и zod
   ],
   en: [
     - Worked on the full development cycle from start to project delivery
@@ -182,8 +180,8 @@
 
 #let marbery = (
   ru: (
-    title: "Junior Vue Разработчик",
-    dates: [Сент 2024 -- Окт 2024],
+    title: "Junior Frontend Разработчик / Vue",
+    dates: [Июнь 2024 -- Окт 2024],
     company: [ООО Марбери -- Сайта менеджмента и продажи школьных альбомов],
     location: remote,
   ),
@@ -207,12 +205,12 @@
 
 #let marbery-body = (
   ru: [
-    - Разрабатывал сайт внутренней документации OpenAPI
-    - Создавал конструктор форм с drag&drop - аналог Google Forms
+    - Разрабатывал сайт внутренней документации OpenAPI -- аналог VK Api
+    - Создавал конструктор форм с drag&drop -- аналог Google Forms
   ],
   en: [
     - Developed internal documentation website with OpenAPI
-    - Created form builder with drag&drop - similar to Google Forms
+    - Created form builder with drag&drop -- similar to Google Forms
   ],
   es: [
     - Desarrollé el sitio web de documentación interna con OpenAPI

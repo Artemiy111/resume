@@ -152,3 +152,15 @@
 #let get-link(link-obj) = {
   link(link-obj.dest)[#raw(link-obj.body)]
 }
+
+#let project-item(
+  role: "",
+  name: "",
+  to: "",
+  dates: "",
+) = {
+  one-by-two(
+    left: [#if role != "" [#strong(role), ] #name~~#to],
+    right: dates,
+  )
+}
