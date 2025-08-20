@@ -372,10 +372,10 @@
 
 #let projects-heading = meta.at(lang).projects.heading
 
-#let biplane = (
-  site: site("https://biplane-design.com"),
-  gh: gh("https://github.com/Artemiy111/biplane-design.com"),
-)
+// #let biplane = (
+//   site: site("https://biplane-design.com"),
+//   gh: gh("https://github.com/Artemiy111/biplane-design.com"),
+// )
 
 #let messenger = gh("https://github.com/Artemiy111/messenger")
 #let gelios = gh("https://github.com/Artemiy111/gelios")
@@ -383,19 +383,19 @@
 
 #let project-body = (
   ru: [
-    - Cайт действующей архитектурной студии Биплан-Дизайн -- Nuxt, DrizzleORM, S3 ~#biplane.site ~ #biplane.gh
+    // - Cайт действующей архитектурной студии Биплан-Дизайн -- Nuxt, DrizzleORM, S3 ~#biplane.site ~ #biplane.gh
     - Мессенджер -- Oauth, S3, SMTP ~ #messenger
     - Редизайн сайта Гелиос -- современный CSS 2024 ~ #gelios
     - Бронирование номеров в отеле -- формы, SMTP ~ #hotel
   ],
   en: [
-    - Website of the active architectural studio Biplane-Design -- Nuxt, DrizzleORM, S3 ~#biplane.site ~ #biplane.gh
+    // - Website of the active architectural studio Biplane-Design -- Nuxt, DrizzleORM, S3 ~#biplane.site ~ #biplane.gh
     - Messenger -- Oauth, S3, SMTP ~ #messenger
     - Redesign of the Gelios website -- modern CSS 2024 ~ #gelios
     - Hotel room booking -- forms, SMTP ~ #hotel
   ],
   es: [
-    - Sitio web del estudio de arquitectura activo Biplane-Design -- Nuxt, DrizzleORM, S3 ~#biplane.site ~ #biplane.gh
+    // - Sitio web del estudio de arquitectura activo Biplane-Design -- Nuxt, DrizzleORM, S3 ~#biplane.site ~ #biplane.gh
     - Mensajero -- Oauth, S3, SMTP ~ #messenger
     - Rediseño del sitio web de Gelios -- CSS moderno 2024 ~ #gelios
     - Reserva de habitaciones de hotel -- formularios, SMTP ~ #hotel
